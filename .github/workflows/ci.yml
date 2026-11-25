@@ -1,0 +1,25 @@
+name: Godot 4.7 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install headless runtime libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            ca-certificates curl unzip python3 \
+            libfontconfig1 libx11-6 libxcursor1 libxinerama1 libxrandr2 libxi6 libgl1
+
+      - name: Bootstrap Godot 4.7.2 and run full verification suite
+        run: |
+          chmod +x setup.sh verify.sh run_game.sh open_editor.sh
+          ./setup.sh

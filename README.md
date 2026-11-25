@@ -7,13 +7,28 @@ A rogue extinction protocol (`OMEGA_WIPE`) threatens to erase humanity's grid. A
 
 Every forum hides deeper clues behind escalating **CAPTCHA security gates**, and you must intentionally **install sketchy Adware** to monetize forum pop-ups, build automation botnets, burn compromised rigs for **Clearance Tokens (`CT`)** in the **12-node CYBERCOM Prestige Tree**, and crack the **Final Dead-Drop** (`omega-vault.gov.bak`).
 
-## Quick Launch
-- **Play Game**: Double-click `run_game.bat` (uses `%GODOT_BIN%`, `godot` on `PATH`, or `%USERPROFILE%\Downloads\Godot_v4.7.2-stable_win64.exe`)
-- **Open in Godot Editor**: Double-click `open_editor.bat`
-- **Run Automated Test Suite**:
-  ```powershell
-  .\run_game.bat --headless --scene res://tests/test_runner.tscn --log-file test_output.log
-  ```
+## Quick Start (Zero-Config for New Devs)
+
+No manual installs required — the bootstrap scripts automatically download **Godot 4.7.2-stable** into `.tools/godot/` if you don't already have it on `PATH`, import all assets, and run the 51-check test suite:
+
+### Windows
+```powershell
+.\setup.bat        # First-time setup: downloads Godot 4.7.2 + imports + runs all tests
+.\run_game.bat     # Play the game (also auto-runs setup if Godot isn't installed yet!)
+.\open_editor.bat  # Open in Godot 4.7.2 Editor
+.\verify.bat       # Run static resource checks + strict compile + 51-test headless suite
+```
+
+### macOS / Linux
+```bash
+chmod +x setup.sh run_game.sh open_editor.sh verify.sh
+./setup.sh         # First-time setup: downloads Godot 4.7.2 + imports + runs all tests
+./run_game.sh      # Play the game
+./open_editor.sh   # Open in Godot 4.7.2 Editor
+./verify.sh        # Run full headless verification suite
+```
+
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** and **[AGENTS.md](AGENTS.md)** for codebase architecture, extending Forums/CAPTCHAs/Adware, and the 16 bundled AI Agent Skills in `.agents/skills/`.
 
 ## Campaign Progression
 

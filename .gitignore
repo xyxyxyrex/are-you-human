@@ -1,7 +1,8 @@
-# Godot 4+ specific ignores
+# Godot 4+ cache & local downloaded engine binaries
 .godot/
+.tools/
 
-# Imported translations (automatically generated from CSV files)
+# Imported translations
 *.translation
 
 # Mono-specific ignores
@@ -9,9 +10,10 @@
 data_*/
 mono_crash.*.json
 
-# Logs and local artifacts
+# Logs and build outputs
 *.log
 builds/
+build/
 export/
 
 # OS / Editor files
